@@ -1,0 +1,32 @@
+mat-card {
+  text-align: center;
+}
+
+mat-toolbar {
+  justify-content: center;
+}
+
+.mat-display-3 {
+  max-height: 0%;
+}
+
+.mit-toolbar-image {
+  padding-left: 3%;
+  padding-right: 3%;
+  max-width: 70%;
+  max-height: 70%;
+}
+
+.mit-container {
+  display: flex;
+  justify-content: center;
+}
+
+.mit-flexbox {
+  width: 20%;
+}
+
+#magic-item-image {
+  max-width: 75%;
+  height: auto;
+}

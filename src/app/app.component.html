@@ -1,0 +1,37 @@
+<div>
+  <mat-toolbar>
+    <img class="mit-toolbar-image" src="assets/magic_sword.png"/>
+    <span class="mat-display-3">Magic Item Tool</span>
+    <img class="mit-toolbar-image" src="assets/magic_sword.png"/>
+  </mat-toolbar>
+
+  <div class="mit-container">
+    <app-magic-item-form class="mit-flexbox"></app-magic-item-form>
+
+    <mat-card>
+      <img
+        id="magic-item-image"
+        src="assets/magicitemcards_template_front_poker_rounded.png"
+        alt=""
+        (error)="magicItemImageLoadError()"
+      />
+      <div style="text-align: center;">
+        <a
+          id="magic-item-link"
+          href="assets/magicitems/magicitemcards_template_front_poker_rounded.png" download="magicitemcards_template_front_poker_rounded.png"
+        >
+          <button mat-fab matTooltip="Download">
+            <mat-icon>cloud_download</mat-icon>
+          </button>
+        </a>
+
+
+      </div>
+    </mat-card>
+
+    <!-- This div lets us center the card using flexbox centering. -->
+    <div class="mit-flexbox">
+    </div>
+  </div>
+</div>
+

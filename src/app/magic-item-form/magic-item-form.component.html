@@ -1,0 +1,56 @@
+<form (ngSubmit)="onSubmit()" #magicItemForm="ngForm">
+
+  <div class="form-group mit-form-divider">
+    <mat-form-field>
+      <mat-label>Title</mat-label>
+      <input matInput name="title" [(ngModel)]="model.title" placeholder="Potion of Healing" autocomplete="off">
+    </mat-form-field>
+  </div>
+
+  <div class="mit-form-divider">
+    <mat-form-field>
+      <mat-label>Type</mat-label>
+      <input matInput name="type" [(ngModel)]="model.type" placeholder="Potion" autocomplete="off">
+    </mat-form-field>
+  </div>
+
+  <div class="mit-form-divider">
+    <mat-form-field>
+      <mat-label>Rarity</mat-label>
+      <mat-select matNativeControl name="rarity" [(ngModel)]="model.rarity">
+        <mat-option *ngFor="let rarity of rarities" [value]="rarity">{{rarity}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="mit-form-divider">
+    <mat-checkbox name="requiresAttunement" [(ngModel)]="model.requiresAttunement">
+      Requires Attunement?
+    </mat-checkbox>
+  </div>
+
+  <div class="mit-form-divider">
+    <mat-form-field>
+      <mat-label>Description</mat-label>
+      <textarea
+        matInput
+        name="description"
+        [(ngModel)]="model.description"
+        placeholder="Recover 2d4 + 2 HP"
+        autocomplete="off"
+        cdkTextareaAutosize
+        #autosize="cdkTextareaAutosize"
+        cdkAutosizeMinRows="1"
+        cdkAutosizeMaxRows="10">
+      >
+      </textarea>
+    </mat-form-field>
+  </div>
+
+  <div class="mit-form-divider">
+    <button mat-fab type="submit" matTooltip="Submit">
+      <mat-icon>done</mat-icon>
+    </button>
+  </div>
+
+</form>
