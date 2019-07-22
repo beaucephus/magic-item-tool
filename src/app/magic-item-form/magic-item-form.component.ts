@@ -28,7 +28,7 @@ export class MagicItemFormComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
     console.log(JSON.stringify(this.model));
-    const be_host = "limitless-badlands-18149.herokuapp.com";
+    const be_host = "magic-item-tool-be.herokuapp.com";
     const be_port = 443;
     const be_base_url = "https://" + be_host + ":" + be_port
 
