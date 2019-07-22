@@ -9,6 +9,7 @@ export class MagicItem {
     public title: string,
     public type: string,
     public rarity: Rarity,
+    public value: string,
     public requiresAttunement: boolean,
     public description: string
   ){}

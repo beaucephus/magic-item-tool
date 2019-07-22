@@ -29,7 +29,7 @@ export class MagicItemFormComponent implements OnInit {
     {value: 'Very Rare', viewValue: 'Very Rare'},
     {value: 'Legendary', viewValue: 'Legendary'}
   ];
-  model = new MagicItem("", "", this.rarities[0], false, "");
+  model = new MagicItem("", "", this.rarities[0], "", false, "");
   submitted = false;
 
   onSubmit() {
