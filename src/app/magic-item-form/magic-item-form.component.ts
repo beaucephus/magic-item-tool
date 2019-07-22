@@ -28,9 +28,9 @@ export class MagicItemFormComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
     console.log(JSON.stringify(this.model));
-    const be_host = "localhost";
-    const be_port = 4201;
-    const be_base_url = "http://" + be_host + ":" + be_port
+    const be_host = "limitless-badlands-18149.herokuapp.com";
+    const be_port = 443;
+    const be_base_url = "https://" + be_host + ":" + be_port
 
     this.http.post<MagicItemData>(be_base_url + "/createmagicitem", this.model).subscribe((data: MagicItemData)  => {
       console.log(data);
