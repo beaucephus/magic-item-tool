@@ -1,16 +1,40 @@
 <form (ngSubmit)="onSubmit()" #magicItemForm="ngForm">
 
-  <div class="form-group mit-form-divider">
+  <div class="mit-form-divider">
     <mat-form-field>
       <mat-label>Title</mat-label>
-      <input matInput name="title" [(ngModel)]="model.title" placeholder="Potion of Healing" autocomplete="off">
+      <textarea
+        matInput
+        required
+        name="title"
+        [minlength]="4"
+        [maxlength]="50"
+        [(ngModel)]="model.title"
+        placeholder="Potion of Healing"
+        autocomplete="off"
+        cdkTextareaAutosize
+        #autosize="cdkTextareaAutosize"
+        cdkAutosizeMinRows="1"
+        cdkAutosizeMaxRows="5">
+      </textarea>
     </mat-form-field>
   </div>
 
   <div class="mit-form-divider">
     <mat-form-field>
       <mat-label>Type</mat-label>
-      <input matInput name="type" [(ngModel)]="model.type" placeholder="Potion" autocomplete="off">
+      <textarea
+        matInput
+        name="type"
+        [maxlength]="15"
+        [(ngModel)]="model.type"
+        placeholder="Potion"
+        autocomplete="off"
+        cdkTextareaAutosize
+        #autosize="cdkTextareaAutosize"
+        cdkAutosizeMinRows="1"
+        cdkAutosizeMaxRows="5">
+      </textarea>
     </mat-form-field>
   </div>
 
@@ -35,20 +59,20 @@
       <textarea
         matInput
         name="description"
+        [maxlength]="500"
         [(ngModel)]="model.description"
         placeholder="Recover 2d4 + 2 HP"
         autocomplete="off"
         cdkTextareaAutosize
         #autosize="cdkTextareaAutosize"
         cdkAutosizeMinRows="1"
-        cdkAutosizeMaxRows="10">
-      >
+        cdkAutosizeMaxRows="20">
       </textarea>
     </mat-form-field>
   </div>
 
   <div class="mit-form-divider">
-    <button mat-fab type="submit" matTooltip="Submit">
+    <button mat-fab type="submit" matTooltip="Submit" [disabled]="magicItemForm.form.invalid">
       <mat-icon>done</mat-icon>
     </button>
   </div>
