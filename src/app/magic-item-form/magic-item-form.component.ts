@@ -27,6 +27,7 @@ export class MagicItemFormComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
+
     console.log(JSON.stringify(this.model));
     const be_host = "magic-item-tool-be.herokuapp.com";
     const be_port = 443;
@@ -37,6 +38,7 @@ export class MagicItemFormComponent implements OnInit {
       document.getElementById("magic-item-image")["src"] = be_base_url + "/magicitem/" + data.magicItem;
       document.getElementById("magic-item-link")["href"] = be_base_url + "/download/" + data.magicItem;
       document.getElementById("magic-item-link")["download"] = data.magicItem;
+      document.getElementById("magic-item-download-button")["disabled"] = false;
     });
   }
 
