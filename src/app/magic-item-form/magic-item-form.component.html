@@ -41,9 +41,22 @@
   <div class="mit-form-divider">
     <mat-form-field>
       <mat-label>Rarity</mat-label>
-      <mat-select matNativeControl name="rarity" [(ngModel)]="model.rarity">
-        <mat-option *ngFor="let rarity of rarities" [value]="rarity">{{rarity}}</mat-option>
+      <mat-select name="rarity" [(ngModel)]="model.rarity">
+        <mat-option *ngFor="let rarity of rarities" [value]="rarity.value">{{rarity.viewValue}}</mat-option>
       </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="mit-form-divider">
+    <mat-form-field>
+      <mat-label>Value</mat-label>
+      <input
+        matInput
+        name="value"
+        [maxlength]="20"
+        [(ngModel)]="model.value"
+        placeholder="50GP"
+        autocomplete="off">
     </mat-form-field>
   </div>
 
@@ -61,7 +74,7 @@
         name="description"
         [maxlength]="500"
         [(ngModel)]="model.description"
-        placeholder="Recover 2d4 + 2 HP"
+        placeholder="Regain 2d4 + 2 hit points."
         autocomplete="off"
         cdkTextareaAutosize
         #autosize="cdkTextareaAutosize"

@@ -1,8 +1,8 @@
 import { Component, OnInit, NgZone, ViewChild } from '@angular/core';
 import { CdkTextareaAutosize } from '@angular/cdk/text-field';
 import { take } from 'rxjs/operators';
-import { MagicItem }    from '../magic-item';
 import { HttpClient } from '@angular/common/http';
+import { MagicItem, Rarity } from '../magic-item';
 
 export interface MagicItemData {
   magicItem: string;
@@ -21,7 +21,14 @@ export class MagicItemFormComponent implements OnInit {
     private _ngZone: NgZone
   ) {}
 
-  rarities = ['Common', 'Uncommon', 'Rare', 'Very Rare', 'Legendary']
+  rarities: Rarity[] = [
+    {value: '', viewValue: 'None'},
+    {value: 'Common', viewValue: 'Common'},
+    {value: 'Uncommon', viewValue: 'Uncommon'},
+    {value: 'Rare', viewValue: 'Rare'},
+    {value: 'Very Rare', viewValue: 'Very Rare'},
+    {value: 'Legendary', viewValue: 'Legendary'}
+  ];
   model = new MagicItem("", "", this.rarities[0], false, "");
   submitted = false;
 
