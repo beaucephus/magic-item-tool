@@ -4,8 +4,6 @@
 
 export const environment = {
   production: false,
-  host: 'localhost',
-  port: '4200',
   backend_URL: 'http://localhost:4201'
 };
 

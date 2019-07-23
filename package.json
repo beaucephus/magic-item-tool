@@ -8,6 +8,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node frontend.js",
+    "build": "ng build",
     "heroku-postbuild": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
