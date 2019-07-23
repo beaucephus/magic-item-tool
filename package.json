@@ -7,10 +7,8 @@
   },
   "scripts": {
     "ng": "ng",
-    "start": "node frontend.js",
-    "build": "ng build --prod --aot",
-    "build-dev": "ng build --dev",
-    "heroku-postbuild": "ng build --prod --aot",
+    "start": "node_modules/.bin/ts-node frontend.ts",
+    "heroku-postbuild": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -31,12 +29,14 @@
     "@angular/router": "~8.1.1",
     "@material/textfield": "^3.0.0",
     "@material/top-app-bar": "^3.0.0",
+    "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "hammerjs": "^2.0.8",
     "path": "^0.12.7",
     "process": "^0.11.10",
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
+    "ts-node": "^8.3.0",
     "typescript": "~3.4.0",
     "zone.js": "~0.9.1"
   },

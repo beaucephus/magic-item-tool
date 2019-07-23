@@ -1,7 +1,9 @@
+import { environment } from '../../environments/environment';
 import { Component, OnInit, NgZone, ViewChild } from '@angular/core';
 import { CdkTextareaAutosize } from '@angular/cdk/text-field';
 import { take } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
+import * as process from 'process';
 import { MagicItem, Rarity } from '../magic-item';
 
 export interface MagicItemData {
@@ -34,16 +36,13 @@ export class MagicItemFormComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-
     console.log(JSON.stringify(this.model));
-    const be_host = "magic-item-tool-be.herokuapp.com";
-    const be_port = 443;
-    const be_base_url = "https://" + be_host + ":" + be_port
 
-    this.http.post<MagicItemData>(be_base_url + "/createmagicitem", this.model).subscribe((data: MagicItemData)  => {
+    this.http.post<MagicItemData>(environment.backend_URL + "/createmagicitem", this.model)
+    .subscribe((data: MagicItemData) => {
       console.log(data);
-      document.getElementById("magic-item-image")["src"] = be_base_url + "/magicitem/" + data.magicItem;
-      document.getElementById("magic-item-link")["href"] = be_base_url + "/download/" + data.magicItem;
+      document.getElementById("magic-item-image")["src"] = environment.backend_URL + "/magicitem/" + data.magicItem;
+      document.getElementById("magic-item-link")["href"] = environment.backend_URL + "/download/" + data.magicItem;
       document.getElementById("magic-item-link")["download"] = data.magicItem;
       document.getElementById("magic-item-download-button")["disabled"] = false;
     });

@@ -1,8 +1,8 @@
 //Install express server
 const express = require('express');
 const path = require('path');
-const host = '0.0.0.0'; // Do not change!!! Required for heroku.
-const port = process.env.PORT || 8080; // Do not change!!! Required for heroku.
+const host = '0.0.0.0';
+const port = '8080';
 
 const app = express();
 
@@ -15,5 +15,5 @@ app.get('/*', function(req,res) {
 
 // Start our frontend
 app.listen(port, host, function() {
-  console.log("Backend now listening on http://" + host + ":" + port + "/");
+  console.log("Frontend now listening on http://" + host + ":" + port + "/");
 });
