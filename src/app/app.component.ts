@@ -12,11 +12,4 @@ export class AppComponent {
   downloadMagicItem(){
     console.log("Downloading magic item.");
   }
-
-  magicItemImageLoadError(image) {
-    setTimeout(function (){
-      image = document.getElementById("magic-item-image");
-      image["src"] = image["src"];
-    }, 10);
-  }
 }
