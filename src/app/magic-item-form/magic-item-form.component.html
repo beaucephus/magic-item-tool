@@ -1,6 +1,6 @@
 <form id="magic-item-form" (ngSubmit)="onSubmit()" #magicItemForm="ngForm">
 
-  <div class="mit-form-divider">
+  <div>
     <mat-form-field>
       <mat-label>Title</mat-label>
       <textarea
@@ -20,7 +20,7 @@
     </mat-form-field>
   </div>
 
-  <div class="mit-form-divider">
+  <div>
     <mat-form-field>
       <mat-label>Type</mat-label>
       <textarea
@@ -38,7 +38,7 @@
     </mat-form-field>
   </div>
 
-  <div class="mit-form-divider">
+  <div>
     <mat-form-field>
       <mat-label>Rarity</mat-label>
       <mat-select name="rarity" [(ngModel)]="model.rarity">
@@ -47,7 +47,7 @@
     </mat-form-field>
   </div>
 
-  <div class="mit-form-divider">
+  <div>
     <mat-form-field>
       <mat-label>Value</mat-label>
       <input
@@ -60,13 +60,13 @@
     </mat-form-field>
   </div>
 
-  <div class="mit-form-divider">
+  <div>
     <mat-checkbox name="requiresAttunement" [(ngModel)]="model.requiresAttunement">
       Requires Attunement?
     </mat-checkbox>
   </div>
 
-  <div class="mit-form-divider">
+  <div>
     <mat-form-field>
       <mat-label>Description</mat-label>
       <textarea
@@ -84,7 +84,7 @@
     </mat-form-field>
   </div>
 
-  <div class="mit-form-divider">
+  <div>
     <button mat-fab type="submit" matTooltip="Submit" [disabled]="magicItemForm.form.invalid">
       <mat-icon>done</mat-icon>
     </button>

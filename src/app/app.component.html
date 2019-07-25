@@ -5,25 +5,40 @@
     <img class="mit-toolbar-image" src="assets/magic_sword.png"/>
   </mat-toolbar>
 
-  <div class="mit-container">
-    <app-magic-item-form class="mit-flexbox"></app-magic-item-form>
-
+  <div fxLayout="column" fxLayoutGap="1%">
     <mat-card>
-      <img
-        id="magic-item-image"
-        src="assets/magicitemcards_template_front_poker_rounded.png"/>
-      <div style="text-align: center;">
-        <a id="magic-item-link">
-          <button id="magic-item-download-button" mat-fab matTooltip="Download" [disabled]="true">
-            <mat-icon>cloud_download</mat-icon>
-          </button>
-        </a>
-      </div>
+      <mat-card-content>
+        <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center">
+          <div>
+            Our goal is to keep Magic Item Tool free for everybody, forever.<br>
+            If you like the tool or find it useful, please consider donating.
+          </div>
+          <a href='https://ko-fi.com/Y8Y6ZVOX' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi1.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+        </div>
+      </mat-card-content>
     </mat-card>
-
-    <!-- This div lets us center the card using flexbox centering. -->
-    <div class="mit-flexbox">
+    <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center">
+        <div fxLayout="column" fxLayoutGap="1%">
+          <mat-card>
+            <app-magic-item-form></app-magic-item-form>
+          </mat-card>
+        </div>
+        <mat-card>
+          <mat-card-content id="mit-image-content">
+            <img mat-card-image
+              id="magic-item-image"
+              src="assets/magicitemcards_template_front_poker_rounded.png"/>
+            <mat-card-actions>
+              <a id="magic-item-link">
+                <button id="magic-item-download-button" mat-fab matTooltip="Download" [disabled]="true">
+                  <mat-icon>cloud_download</mat-icon>
+                </button>
+              </a>
+            </mat-card-actions>
+          </mat-card-content>
+        </mat-card>
     </div>
   </div>
+
 </div>
 
