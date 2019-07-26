@@ -1,22 +1,32 @@
 <div>
-  <mat-toolbar fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center">
-    <img class="mit-toolbar-image" src="assets/magic_sword.png"/>
-    <span class="mat-display-3">Magic Item Tool</span>
-    <img class="mit-toolbar-image" src="assets/magic_sword.png"/>
+  <!-- <mat-toolbar fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center">
+    <img fxFlex="0 1 0" src="assets/magic_sword.png"/>
+    <span fxFlex="1 1 auto">Magic Item Tool</span>
+    <span>
+
+    </span>
+  </mat-toolbar> -->
+
+  <mat-toolbar>
+    <span fxLayout="row" fxLayoutGap="5%" fxLayoutAlign="center center">
+      <img height="50px" src="assets/magic_sword.png"/>
+      <div>
+        Magic Item Tool
+      </div>
+    </span>
+    <span fxFlex="1 1 auto"></span>
+    <span fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center center">
+      <div class="mat-body-1">
+        Our goal is to keep Magic Item Tool free for everybody, forever.<br>
+        If you like the tool or find it useful, please consider donating.
+      </div>
+      <div>
+        <a href='https://ko-fi.com/Y8Y6ZVOX' target='_blank'><img class="mat-elevation-z24" height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi1.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+      </div>
+    </span>
   </mat-toolbar>
 
   <div fxLayout="column" fxLayoutGap="1%">
-    <mat-card class="mat-elevation-z10">
-      <mat-card-content>
-        <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center">
-          <div>
-            Our goal is to keep Magic Item Tool free for everybody, forever.<br>
-            If you like the tool or find it useful, please consider donating.
-          </div>
-          <a href='https://ko-fi.com/Y8Y6ZVOX' target='_blank'><img class="mat-elevation-z24" height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi1.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
-        </div>
-      </mat-card-content>
-    </mat-card>
     <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center">
         <div fxLayout="column" fxLayoutGap="1%">
           <mat-card class="mat-elevation-z10">
