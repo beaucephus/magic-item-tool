@@ -1,93 +1,84 @@
-<form id="magic-item-form" (ngSubmit)="onSubmit()" #magicItemForm="ngForm">
+<form
+  id="magic-item-form"
+  (ngSubmit)="onSubmit()"
+  #magicItemForm="ngForm"
+  fxLayout="column"
+  fxLayoutGap="1%">
 
-  <div>
-    <mat-form-field>
-      <mat-label>Title</mat-label>
-      <textarea
-        matInput
-        required
-        name="title"
-        [minlength]="4"
-        [maxlength]="50"
-        [(ngModel)]="model.title"
-        placeholder="Potion of Healing"
-        autocomplete="off"
-        cdkTextareaAutosize
-        #autosize="cdkTextareaAutosize"
-        cdkAutosizeMinRows="1"
-        cdkAutosizeMaxRows="5">
-      </textarea>
-    </mat-form-field>
-  </div>
+  <mat-form-field>
+    <mat-label>Title</mat-label>
+    <textarea
+      matInput
+      required
+      name="title"
+      [minlength]="4"
+      [maxlength]="50"
+      [(ngModel)]="model.title"
+      placeholder="Potion of Healing"
+      autocomplete="off"
+      cdkTextareaAutosize
+      cdkAutosizeMinRows="1"
+      cdkAutosizeMaxRows="5">
+    </textarea>
+  </mat-form-field>
 
-  <div>
-    <mat-form-field>
-      <mat-label>Type</mat-label>
-      <textarea
-        matInput
-        name="type"
-        [maxlength]="15"
-        [(ngModel)]="model.type"
-        placeholder="Potion"
-        autocomplete="off"
-        cdkTextareaAutosize
-        #autosize="cdkTextareaAutosize"
-        cdkAutosizeMinRows="1"
-        cdkAutosizeMaxRows="5">
-      </textarea>
-    </mat-form-field>
-  </div>
+  <mat-form-field>
+    <mat-label>Type</mat-label>
+    <textarea
+      matInput
+      name="type"
+      [maxlength]="15"
+      [(ngModel)]="model.type"
+      placeholder="Potion"
+      autocomplete="off"
+      cdkTextareaAutosize
+      cdkAutosizeMinRows="1"
+      cdkAutosizeMaxRows="5">
+    </textarea>
+  </mat-form-field>
 
-  <div>
-    <mat-form-field>
-      <mat-label>Rarity</mat-label>
-      <mat-select name="rarity" [(ngModel)]="model.rarity">
-        <mat-option *ngFor="let rarity of rarities" [value]="rarity.value">{{rarity.viewValue}}</mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
+  <mat-form-field>
+    <mat-label>Rarity</mat-label>
+    <mat-select name="rarity" [(ngModel)]="model.rarity">
+      <mat-option *ngFor="let rarity of rarities" [value]="rarity.value">{{rarity.viewValue}}</mat-option>
+    </mat-select>
+  </mat-form-field>
 
-  <div>
-    <mat-form-field>
-      <mat-label>Value</mat-label>
-      <input
-        matInput
-        name="value"
-        [maxlength]="15"
-        [(ngModel)]="model.value"
-        placeholder="50GP"
-        autocomplete="off">
-    </mat-form-field>
-  </div>
+  <mat-form-field>
+    <mat-label>Value</mat-label>
+    <input
+      matInput
+      name="value"
+      [maxlength]="15"
+      [(ngModel)]="model.value"
+      placeholder="50GP"
+      autocomplete="off"
+      cdkTextareaAutosize
+      cdkAutosizeMinRows="1"
+      cdkAutosizeMaxRows="5">
+  </mat-form-field>
 
-  <div>
-    <mat-checkbox name="requiresAttunement" [(ngModel)]="model.requiresAttunement">
-      Requires Attunement?
-    </mat-checkbox>
-  </div>
+  <mat-checkbox name="requiresAttunement" [(ngModel)]="model.requiresAttunement">
+    Requires Attunement?
+  </mat-checkbox>
 
-  <div>
-    <mat-form-field>
-      <mat-label>Description</mat-label>
-      <textarea
-        matInput
-        name="description"
-        [maxlength]="500"
-        [(ngModel)]="model.description"
-        placeholder="Regain 2d4 + 2 hit points."
-        autocomplete="off"
-        cdkTextareaAutosize
-        #autosize="cdkTextareaAutosize"
-        cdkAutosizeMinRows="1"
-        cdkAutosizeMaxRows="20">
-      </textarea>
-    </mat-form-field>
-  </div>
+  <mat-form-field>
+    <mat-label>Description</mat-label>
+    <textarea
+      matInput
+      name="description"
+      [maxlength]="500"
+      [(ngModel)]="model.description"
+      placeholder="Regain 2d4 + 2 hit points."
+      autocomplete="off"
+      cdkTextareaAutosize
+      cdkAutosizeMinRows="1"
+      cdkAutosizeMaxRows="20">
+    </textarea>
+  </mat-form-field>
 
-  <div>
-    <button mat-fab type="submit" matTooltip="Submit" [disabled]="magicItemForm.form.invalid">
-      <mat-icon>done</mat-icon>
-    </button>
-  </div>
+  <button mat-fab type="submit" matTooltip="Submit" [disabled]="magicItemForm.form.invalid">
+    <mat-icon>done</mat-icon>
+  </button>
 
 </form>

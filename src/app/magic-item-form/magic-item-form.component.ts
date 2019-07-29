@@ -1,9 +1,6 @@
 import { environment } from '../../environments/environment';
-import { Component, OnInit, NgZone, ViewChild } from '@angular/core';
-import { CdkTextareaAutosize } from '@angular/cdk/text-field';
-import { take } from 'rxjs/operators';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import * as process from 'process';
 import { MagicItem, Rarity } from '../magic-item';
 
 export interface MagicItemData {
@@ -20,7 +17,6 @@ export class MagicItemFormComponent implements OnInit {
   ngOnInit() { }
   constructor(
     private http: HttpClient,
-    private _ngZone: NgZone
   ) {}
 
   rarities: Rarity[] = [
@@ -46,13 +42,5 @@ export class MagicItemFormComponent implements OnInit {
       document.getElementById("magic-item-link")["download"] = data.magicItem;
       document.getElementById("magic-item-download-button")["disabled"] = false;
     });
-  }
-
-  @ViewChild('autosize', {static: false}) autosize: CdkTextareaAutosize;
-
-  triggerResize() {
-    // Wait for changes to be applied, then trigger textarea resize.
-    this._ngZone.onStable.pipe(take(1))
-        .subscribe(() => this.autosize.resizeToFitContent(true));
   }
 }
