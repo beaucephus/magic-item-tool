@@ -15,9 +15,7 @@ export interface MagicItemData {
 export class MagicItemFormComponent implements OnInit {
 
   ngOnInit() { }
-  constructor(
-    private http: HttpClient,
-  ) {}
+  constructor(private http: HttpClient) { }
 
   rarities: Rarity[] = [
     {value: '', viewValue: 'None'},
@@ -28,11 +26,11 @@ export class MagicItemFormComponent implements OnInit {
     {value: 'Legendary', viewValue: 'Legendary'}
   ];
   model = new MagicItem("", "", this.rarities[0], "", false, "");
-  submitted = false;
 
   onSubmit() {
-    this.submitted = true;
     console.log(JSON.stringify(this.model));
+
+    this.dimImage();
 
     this.http.post<MagicItemData>(environment.backend_URL + "/createmagicitem", this.model)
     .subscribe((data: MagicItemData) => {
@@ -41,6 +39,18 @@ export class MagicItemFormComponent implements OnInit {
       document.getElementById("magic-item-link")["href"] = environment.backend_URL + "/download/" + data.magicItem;
       document.getElementById("magic-item-link")["download"] = data.magicItem;
       document.getElementById("magic-item-download-button")["disabled"] = false;
+
+      this.brightenImage();
     });
+  }
+
+  dimImage() {
+    console.log("Showing spinner.");
+    document.getElementById("magic-item-image").style.filter = "brightness(50%)";
+  }
+
+  brightenImage() {
+    console.log("Showing image.");
+    document.getElementById("magic-item-image").style.filter = "brightness(100%)";
   }
 }

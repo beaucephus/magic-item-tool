@@ -8,8 +8,4 @@ import { environment } from '../environments/environment';
 })
 export class AppComponent {
   title = 'magic-item-tool';
-
-  downloadMagicItem(){
-    console.log("Downloading magic item.");
-  }
 }
