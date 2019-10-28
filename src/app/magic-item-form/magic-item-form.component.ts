@@ -1,10 +1,15 @@
 import { environment } from '../../environments/environment';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MagicItem, Rarity } from '../magic-item';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+
 
 export interface MagicItemData {
   magicItem: string;
+}
+
+export interface DialogData {
 }
 
 @Component({
@@ -15,7 +20,7 @@ export interface MagicItemData {
 export class MagicItemFormComponent implements OnInit {
 
   ngOnInit() { }
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, public dialog: MatDialog) { }
 
   rarities: Rarity[] = [
     {value: '', viewValue: 'None'},
@@ -25,9 +30,27 @@ export class MagicItemFormComponent implements OnInit {
     {value: 'Very Rare', viewValue: 'Very Rare'},
     {value: 'Legendary', viewValue: 'Legendary'}
   ];
-  model = new MagicItem("", "", this.rarities[0], "", false, "");
+  model = new MagicItem("", "", this.rarities[0], "", false, "", null);
 
-  onSubmit() {
+  //
+  // Opens the dialog modal to create a custom magic item image.
+  //
+  openCustomImageDialog(): void {
+    const dialogRef = this.dialog.open(CustomImageDialog, {
+      width: '250px',
+      data: {}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+
+  //
+  // Submits magic item for processing to the backend.
+  // Displays the returned image.
+  //
+  submitMagicItem() {
     console.log(JSON.stringify(this.model));
 
     this.dimImage();
@@ -53,4 +76,23 @@ export class MagicItemFormComponent implements OnInit {
     console.log("Showing image.");
     document.getElementById("magic-item-image").style.filter = "brightness(100%)";
   }
+}
+
+//
+// Represents the Custom Image Dialog modal.
+//
+@Component({
+  selector: 'custom-image-dialog',
+  templateUrl: 'custom-image-dialog.html',
+})
+export class CustomImageDialog {
+
+  constructor(
+    public dialogRef: MatDialogRef<CustomImageDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
 }

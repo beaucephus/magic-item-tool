@@ -6,16 +6,18 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MaterialModule } from './material.module';
-import { MagicItemFormComponent } from './magic-item-form/magic-item-form.component';
+import { MaterialModule } from './material-module';
+import { MagicItemFormComponent, CustomImageDialog } from './magic-item-form/magic-item-form.component';
 import { MagicItemImageComponent } from './magic-item-image/magic-item-image.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MagicItemFormComponent,
-    MagicItemImageComponent
+    MagicItemImageComponent,
+    CustomImageDialog
   ],
   imports: [
     BrowserModule,
@@ -25,6 +27,9 @@ import { MagicItemImageComponent } from './magic-item-image/magic-item-image.com
     FormsModule,
     HttpClientModule,
     FlexLayoutModule
+  ],
+  entryComponents: [
+    CustomImageDialog
   ],
   providers: [],
   bootstrap: [AppComponent]

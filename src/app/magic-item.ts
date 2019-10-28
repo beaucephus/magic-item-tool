@@ -11,7 +11,8 @@ export class MagicItem {
     public rarity: Rarity,
     public value: string,
     public requiresAttunement: boolean,
-    public description: string
+    public description: string,
+    public image: any
   ){}
 
 }
