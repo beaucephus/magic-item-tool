@@ -12,7 +12,7 @@ export class MagicItem {
     public value: string,
     public requiresAttunement: boolean,
     public description: string,
-    public image: any
+    public customImage: any
   ){}
 
 }
