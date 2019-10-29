@@ -2,15 +2,14 @@ import { environment } from '../../environments/environment';
 import { Component, OnInit, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MagicItem, Rarity } from '../magic-item';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { CustomImageDialogComponent } from '../custom-image-dialog/custom-image-dialog.component';
+import { MatDialog } from '@angular/material';
 
 
 export interface MagicItemData {
   magicItem: string;
 }
 
-export interface DialogData {
-}
 
 @Component({
   selector: 'app-magic-item-form',
@@ -36,7 +35,7 @@ export class MagicItemFormComponent implements OnInit {
   // Opens the dialog modal to create a custom magic item image.
   //
   openCustomImageDialog(): void {
-    const dialogRef = this.dialog.open(CustomImageDialog, {
+    const dialogRef = this.dialog.open(CustomImageDialogComponent, {
       width: '250px',
       data: {}
     });
@@ -76,23 +75,4 @@ export class MagicItemFormComponent implements OnInit {
     console.log("Showing image.");
     document.getElementById("magic-item-image").style.filter = "brightness(100%)";
   }
-}
-
-//
-// Represents the Custom Image Dialog modal.
-//
-@Component({
-  selector: 'custom-image-dialog',
-  templateUrl: 'custom-image-dialog.html',
-})
-export class CustomImageDialog {
-
-  constructor(
-    public dialogRef: MatDialogRef<CustomImageDialog>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
-
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
-
 }
