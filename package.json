@@ -2,8 +2,8 @@
   "name": "magic-item-tool",
   "version": "0.0.0",
   "engines": {
-    "node": "12.6.0",
-    "yarn": "1.17.3"
+    "node": "13.1.0",
+    "yarn": "1.19.1"
   },
   "scripts": {
     "ng": "ng",
