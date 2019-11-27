@@ -1,1 +1,35 @@
-<h1 mat-dialog-title>Custom image feature in progress.</h1>
+<mat-card>
+  <mat-card-content>
+    <!-- <canvas id="custom-image-canvas" width="600" height="400" style="border:1px solid #000000;">
+      <img
+        id="custom-image"
+        src="assets/magic_sword.png"
+        alt="Custom Image"/>
+    </canvas> -->
+    <img mat-card-image
+      id="custom-image"
+      src="#"
+      alt="Custom Image"/>
+    <mat-card-actions>
+      <button mat-fab
+      class="custom-image-dialog-button"
+      matTooltip="Select File"
+      (click)="fileInput.click()">
+        <mat-icon>library_add</mat-icon>
+        <input
+        #fileInput
+        type="file"
+        (change)="updateCustomImage($event)"
+        style="display:none;"/>
+      </button>
+
+      <button mat-fab
+      class="custom-image-dialog-button"
+      matTooltip="Done"
+      name="customImageClose"
+      (click)="closeCustomImageDialog()">
+        <mat-icon>done</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card-content>
+</mat-card>

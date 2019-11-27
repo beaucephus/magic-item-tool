@@ -36,12 +36,13 @@ export class MagicItemFormComponent implements OnInit {
   //
   openCustomImageDialog(): void {
     const dialogRef = this.dialog.open(CustomImageDialogComponent, {
-      width: '250px',
+      width: '700px',
       data: {}
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
+      this.model.customImage = result;
     });
   }
 
