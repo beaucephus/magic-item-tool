@@ -36,7 +36,8 @@ export class MagicItemFormComponent implements OnInit {
   //
   openCustomImageDialog(): void {
     const dialogRef = this.dialog.open(CustomImageDialogComponent, {
-      width: '700px',
+      maxWidth: '80%',
+      maxHeight: '500px',
       data: {}
     });
 
