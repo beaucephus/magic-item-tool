@@ -47,7 +47,8 @@ export class CustomImageDialogComponent {
 
   closeCustomImageDialog() {
     var image:HTMLImageElement = <HTMLImageElement> document.getElementById("custom-image");
-    this.dialogRef.close(image.src);
+    var base64Image:string = image.src.split(',')[1] // Strips the Data-URL declaration from the string.
+    this.dialogRef.close(base64Image);
   }
 
   drawCustomImageCanvas() {
