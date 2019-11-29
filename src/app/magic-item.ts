@@ -6,13 +6,13 @@ export interface Rarity {
 export class MagicItem {
 
   constructor(
-    public title: string,
-    public type: string,
-    public rarity: Rarity,
-    public value: string,
-    public requiresAttunement: boolean,
-    public description: string,
-    public customImage: string
+    public title?: string,
+    public type?: string,
+    public rarity?: Rarity,
+    public value?: string,
+    public requiresAttunement?: boolean,
+    public description?: string,
+    public customImage?: string
   ){}
 
 }

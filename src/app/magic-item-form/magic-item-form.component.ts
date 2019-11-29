@@ -22,14 +22,14 @@ export class MagicItemFormComponent implements OnInit {
   constructor(private http: HttpClient, public dialog: MatDialog) { }
 
   rarities: Rarity[] = [
-    {value: '', viewValue: 'None'},
+    {value: null, viewValue: 'None'},
     {value: 'Common', viewValue: 'Common'},
     {value: 'Uncommon', viewValue: 'Uncommon'},
     {value: 'Rare', viewValue: 'Rare'},
     {value: 'Very Rare', viewValue: 'Very Rare'},
     {value: 'Legendary', viewValue: 'Legendary'}
   ];
-  model = new MagicItem("", "", this.rarities[0], "", false, "", null);
+  model = new MagicItem();
 
   //
   // Opens the dialog modal to create a custom magic item image.
