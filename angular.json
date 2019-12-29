@@ -62,7 +62,9 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "magic-item-tool:build"
+            "browserTarget": "magic-item-tool:build",
+            "host": "0.0.0.0",
+            "port": 4200
           },
           "configurations": {
             "production": {
