@@ -1,7 +1,7 @@
 import { environment } from '../../environments/environment';
 import { Component, OnInit, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { MagicItem, Rarity } from '../magic-item';
+import { MagicItem, Font, Rarity } from '../magic-item';
 import { CustomImageDialogComponent } from '../custom-image-dialog/custom-image-dialog.component';
 import { MatDialog } from '@angular/material';
 
@@ -19,7 +19,12 @@ export interface MagicItemData {
 export class MagicItemFormComponent implements OnInit {
 
   ngOnInit() { }
-  constructor(private http: HttpClient, public dialog: MatDialog) { }
+  constructor(private http: HttpClient, public dialog: MatDialog) {}
+
+  fonts: Font[] = [
+    {value: 'open_sans', viewValue: 'Open Sans'},
+    {value: 'fantaisie_artistique', viewValue: 'Fantasy'}
+  ];
 
   rarities: Rarity[] = [
     {value: null, viewValue: 'None'},
@@ -29,7 +34,8 @@ export class MagicItemFormComponent implements OnInit {
     {value: 'Very Rare', viewValue: 'Very Rare'},
     {value: 'Legendary', viewValue: 'Legendary'}
   ];
-  model = new MagicItem();
+
+  model = new MagicItem(this.fonts[0].value);
 
   //
   // Opens the dialog modal to create a custom magic item image.

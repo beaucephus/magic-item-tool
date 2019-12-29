@@ -5,6 +5,13 @@
   fxLayoutGap="1%">
 
   <mat-form-field>
+    <mat-label>Font Style</mat-label>
+    <mat-select name="font" [(ngModel)]="model.font">
+      <mat-option *ngFor="let font of fonts" [value]="font.value">{{font.viewValue}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
     <mat-label>Title</mat-label>
     <textarea
       matInput
