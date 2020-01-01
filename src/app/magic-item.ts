@@ -1,3 +1,8 @@
+export interface Card {
+  value: string;
+  viewValue: string;
+}
+
 export interface Font {
   value: string;
   viewValue: string;
@@ -11,6 +16,7 @@ export interface Rarity {
 export class MagicItem {
 
   constructor(
+    public card: string,
     public font: string,
     public title?: string,
     public type?: string,

@@ -5,6 +5,13 @@
   fxLayoutGap="1%">
 
   <mat-form-field>
+    <mat-label>Card Style</mat-label>
+    <mat-select name="card" [(ngModel)]="model.card">
+      <mat-option *ngFor="let card of cards" [value]="card.value">{{card.viewValue}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
     <mat-label>Font Style</mat-label>
     <mat-select name="font" [(ngModel)]="model.font">
       <mat-option *ngFor="let font of fonts" [value]="font.value">{{font.viewValue}}</mat-option>
