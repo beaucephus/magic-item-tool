@@ -10,6 +10,7 @@ import { MaterialModule } from './material-module';
 import { MagicItemFormComponent } from './magic-item-form/magic-item-form.component';
 import { MagicItemImageComponent } from './magic-item-image/magic-item-image.component';
 import { CustomImageDialogComponent } from './custom-image-dialog/custom-image-dialog.component';
+import { InputTrimModule } from 'ng2-trim-directive';
 
 
 
@@ -27,7 +28,8 @@ import { CustomImageDialogComponent } from './custom-image-dialog/custom-image-d
     MaterialModule,
     FormsModule,
     HttpClientModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    InputTrimModule
   ],
   entryComponents: [
     CustomImageDialogComponent
