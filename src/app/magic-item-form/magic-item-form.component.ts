@@ -22,7 +22,8 @@ export class MagicItemFormComponent implements OnInit {
   constructor(private http: HttpClient, public dialog: MatDialog) {}
 
   cards: Card[] = [
-    {value: 'parchment_poker', viewValue: 'Parchment(Poker)'}
+    {value: 'parchment_poker', viewValue: 'Parchment(Poker)'},
+    {value: 'parchment_tarot', viewValue: 'Parchment(Tarot)'}
   ];
 
   fonts: Font[] = [
