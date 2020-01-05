@@ -28,7 +28,8 @@ export class MagicItemFormComponent implements OnInit {
 
   fonts: Font[] = [
     {value: 'open_sans', viewValue: 'Open Sans'},
-    {value: 'fantaisie_artistique', viewValue: 'Fantasy'}
+    {value: 'fantaisie_artistique', viewValue: 'Fantasy'},
+    {value: 'moria_citadel', viewValue: 'Moria Citadel'},
   ];
 
   rarities: Rarity[] = [
