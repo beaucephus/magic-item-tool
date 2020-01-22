@@ -1,5 +1,13 @@
 # MagicItemTool
 
+## TODO
+Preview card selection.
+Preview font selection.
+
+## Features TODO
+Enable account creation and persistent data storage.
+Enable saving finished cards to account.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.1.
 
 ## Development server
