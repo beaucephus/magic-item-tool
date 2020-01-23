@@ -31,7 +31,7 @@ export class MagicItemFormComponent implements OnInit {
 
   fonts: Font[] = [
     {value: 'open_sans', viewValue: 'Open Sans'},
-    {value: 'fantaisie_artistique', viewValue: 'Fantasy'},
+    // {value: 'fantaisie_artistique', viewValue: 'Fantasy'},
     {value: 'moria_citadel', viewValue: 'Moria Citadel'},
   ];
 
@@ -58,7 +58,7 @@ export class MagicItemFormComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      this.model.customImage = result;
+      this.model.custom_image = result;
     });
   }
 

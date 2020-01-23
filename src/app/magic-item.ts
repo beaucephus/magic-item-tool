@@ -22,9 +22,9 @@ export class MagicItem {
     public type?: string,
     public rarity?: string,
     public value?: string,
-    public requiresAttunement?: boolean,
+    public requires_attunement?: boolean,
     public description?: string,
-    public customImage?: string
+    public custom_image?: string
   ){}
 
 }
