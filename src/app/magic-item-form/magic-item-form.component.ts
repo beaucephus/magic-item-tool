@@ -25,14 +25,14 @@ export class MagicItemFormComponent implements OnInit {
     {value: 'parchment', viewValue: 'Parchment'},
     {value: 'dwarven', viewValue: 'Dwarven'},
     {value: 'elven', viewValue: 'Elven'},
-    {value: 'parchment_legacy_poker', viewValue: 'Parchment(Legacy)(Poker)'},
-    {value: 'parchment_legacy_tarot', viewValue: 'Parchment(Legacy)(Tarot)'}
+    {value: 'parchmentLegacyPoker', viewValue: 'Parchment(Legacy)(Poker)'},
+    {value: 'parchmentLegacyTarot', viewValue: 'Parchment(Legacy)(Tarot)'}
   ];
 
   fonts: Font[] = [
-    {value: 'open_sans', viewValue: 'Open Sans'},
+    {value: 'openSans', viewValue: 'Open Sans'},
     // {value: 'fantaisie_artistique', viewValue: 'Fantasy'},
-    {value: 'moria_citadel', viewValue: 'Moria Citadel'},
+    {value: 'moriaCitadel', viewValue: 'Moria Citadel'},
   ];
 
   rarities: Rarity[] = [
