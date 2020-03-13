@@ -72,11 +72,11 @@ export class MagicItemFormComponent implements OnInit {
     this.dimImage();
     document.getElementById("magic-item-download-button")["disabled"] = true;
 
-    this.http.post<MagicItemData>(environment.backend_URL + "/createmagicitem", this.model)
+    this.http.post<MagicItemData>(environment.backend_URL + "/magic-items", this.model)
     .subscribe((data: MagicItemData) => {
       console.log(data);
-      document.getElementById("magic-item-image")["src"] = environment.backend_URL + "/magicitem/" + data.magicItem;
-      document.getElementById("magic-item-link")["href"] = environment.backend_URL + "/download/" + data.magicItem;
+      document.getElementById("magic-item-image")["src"] = environment.backend_URL + "/magic-items/" + data.magicItem;
+      document.getElementById("magic-item-link")["href"] = environment.backend_URL + "/magic-items/download/" + data.magicItem;
       document.getElementById("magic-item-link")["download"] = data.magicItem;
 
       document.getElementById("magic-item-download-button")["disabled"] = false;
